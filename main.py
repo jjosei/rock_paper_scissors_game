@@ -29,48 +29,31 @@ scissors = '''
 
 import random
 
-computer_input = random.randint(0, 2)
+images = [rock, paper, scissors]
 
-user_input = input("What do you choose? Rock, Paper or Scissors?\n").lower()
 
-if user_input == "rock":
-    print(rock)
-elif user_input == "paper":
-    print(paper)
-elif user_input == "scissors":
-    print(scissors)
 
-if computer_input == 0:
-    computer_choice = "rock"
-elif computer_input == 1:
-    computer_choice = "paper"
-elif computer_input == 2:
-    computer_choice = "scissors"
+user_input = int(input("What do you choose? 0 for Rock, 1 for Paper or 2 for Scissors?\n"))
+print(images[user_input])
+
 
 print("Computer chose:")
+computer_input = random.randint(0, 2)
+print(images[computer_input])
 
-if computer_choice == "rock":
-    print(rock)
-elif computer_choice == "paper":
-    print(paper)
-elif computer_choice == "scissors":
-    print(scissors)
 
-if user_input == "rock" and computer_choice == "scissors":
+
+if user_input == 0 and computer_input == 2:
     print("You win!")
-elif user_input == "scissors" and computer_choice == "paper":
+elif user_input == 1 and computer_input == 0:
     print("You win!")
-elif user_input == "paper" and computer_choice == "rock":
+elif user_input == 2 and computer_input == 1:
     print("You win!")
-elif user_input == "rock" and computer_choice == "paper":
+elif user_input == 2 and computer_input == 0:
     print("You lose!")
-elif user_input == "scissors" and computer_choice == "rock":
+elif user_input == 1 and computer_input == 2:
     print("You lose!")
-elif user_input == "paper" and computer_choice == "scissors":
+elif user_input == 0 and computer_input == 1:
     print("You lose!")
-elif user_input == "paper" and computer_choice == "paper":
-    print("Draw!")
-elif user_input == "scissors" and computer_choice == "scissors":
-    print("Draw!")
-elif user_input == "rock" and computer_choice == "rock":
+elif user_input == computer_input:
     print("Draw!")
